@@ -1,8 +1,8 @@
 <launch>
-    <node pkg="ros_demo" type="visual_voxel_node" name="voxel_publisher" output="screen" />
-    <node pkg="ros_demo" type="visual_img_node" name="image_publisher" output="screen" />
+    <node pkg="visual_demo" type="visual_voxel_node" name="voxel_publisher" output="screen" />
+    <node pkg="visual_demo" type="visual_img_node" name="image_publisher" output="screen" />
 
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ros_demo)/rviz/voxel_and_img.rviz" required="true" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find visual_demo)/rviz/voxel_and_img.rviz" required="true" />
 
 </launch>
 
