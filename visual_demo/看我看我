@@ -1,2 +1,5 @@
-1.运行  roslaunch visual_demo visual_voxel.launch，可以实现同时展示体素和图像，主要调用了两个节点，两个节点的源文件在src/visual/下
+主要功能是自定义生成体素和图像，让rviz进行可视化
+
+
+运行  roslaunch visual_demo visual_voxel.launch，可以实现同时展示体素和图像，主要调用了两个节点，两个节点的源文件在src/visual/下
     配置rviz时，注意的是体素的显示除了要配置topic外，还要将Global Options下Fixed Frame的值改为 程序中marker.header.frame_id的值

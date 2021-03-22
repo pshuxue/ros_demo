@@ -1,0 +1,35 @@
+主要是rosmessage 的使用，launch文件调用了两个节点，一个使用自定义的消息类型进行发布，另一个节点进行接收，在自定义的消息中还打包了图像
+
+ros message步骤：
+1. 创建msg文件夹，新建一个 .msg文件
+
+
+2. 在package.xml中加入（注意自定义message依赖rospy和roscpp）
+        <build_depend>message_generation</build_depend>
+        <exec_depend>message_runtime</exec_depend>
+
+
+3. CMakeList.txt中修改四点：
+            find_package(catkin REQUIRED COMPONENTS
+             roscpp 
+             rospy 
+             message_generation 
+             std_msgs )
+
+            add_message_files(
+            FILES
+            Test.msg
+            )
+
+            generate_messages(      //注意这里，如果使用了ros自带的消息，要写在这里
+            DEPENDENCIES
+            std_msgs
+            sensor_msgs
+            )
+
+            catkin_package(
+            CATKIN_DEPENDS message_runtime
+            )
+
+4.执行一次catkin_make，会在devel/include出现想要的.h文件，直接包含使用即可
+

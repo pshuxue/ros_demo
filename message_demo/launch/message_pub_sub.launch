@@ -1,0 +1,7 @@
+<launch>
+
+    <!-- <pkg是包的名字，type是可执行文件名，name是节点名 /> -->
+    <node pkg="message_demo" type="message_pub_test" name="message_publisher" output="screen" />
+    <node pkg="message_demo" type="message_sub_test" name="message_sublisher" output="screen" />
+
+</launch>
