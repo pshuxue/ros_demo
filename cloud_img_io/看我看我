@@ -1,0 +1,1 @@
+get_cloud_img_from_rosbag 是从rosbag中读取点云和图像并保存
